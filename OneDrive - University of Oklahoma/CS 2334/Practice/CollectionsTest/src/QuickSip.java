@@ -16,6 +16,7 @@ public class QuickSip
         JFrame frame = new JFrame();
         JButton button = new JButton("Add Coffee");
         
+        final int initialGulps = 5;
         
         class DrinksCoffee implements ActionListener
         {
@@ -39,18 +40,18 @@ public class QuickSip
                 {
                     System.out.println("done");
                     JOptionPane.showMessageDialog(null,  "Make another?");
-                    System.exit(0);
+                    gulps = initialGulps;
                 }
                 --gulps;
             }
             
         }
         
-        DrinksCoffee dc = new DrinksCoffee(100);
-        Timer t = new Timer (100, dc);
+        DrinksCoffee dc = new DrinksCoffee(initialGulps);
+        Timer t = new Timer (1000, dc);
         t.start();
-        
-        
+        JOptionPane.showMessageDialog(null,  "Just about to go to school");
+        System.out.println("we out");
         System.exit(0);
         
     }
